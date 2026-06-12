@@ -1,5 +1,5 @@
-/** URL do checkout — troque pela URL real (Kiwify, Hotmart, Perfect Pay, etc.). */
-export const CHECKOUT_URL = "https://pay.seucheckout.com.br/harmonia-hormonal";
+/** URL do checkout (Lastlink). */
+export const CHECKOUT_URL = "https://lastlink.com/p/C5F28D280/checkout-payment/";
 
 export const PRICE = "R$ 19,90";
 export const FULL_PRICE = "R$ 47,00";
