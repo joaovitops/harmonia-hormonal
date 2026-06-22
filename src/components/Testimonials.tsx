@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { BadgeCheck } from "lucide-react";
-import { Avatar, Overline, Reveal, Stars } from "./ui";
+import { Overline, PhotoAvatar, Reveal, Stars } from "./ui";
 
 const TESTIMONIALS = [
   {
@@ -28,31 +27,6 @@ const TESTIMONIALS = [
       "Minha TPM estava destruindo meus relacionamentos. Descobri no diagnóstico que tinha dominância estrogênica — algo que meu ginecologista nunca mencionou. 21 dias depois, meu ciclo finalmente faz sentido.",
   },
 ];
-
-/** Foto da depoente com fallback para as iniciais se a imagem não carregar. */
-function PhotoAvatar({
-  name,
-  photo,
-  tone,
-}: {
-  name: string;
-  photo: string;
-  tone: number;
-}) {
-  const [failed, setFailed] = useState(false);
-  if (failed) {
-    return <Avatar name={name} tone={tone} className="size-11 text-sm" />;
-  }
-  return (
-    <img
-      src={photo}
-      alt={`Foto de ${name}`}
-      loading="lazy"
-      onError={() => setFailed(true)}
-      className="size-11 shrink-0 rounded-full object-cover ring-2 ring-white"
-    />
-  );
-}
 
 export function Testimonials() {
   return (

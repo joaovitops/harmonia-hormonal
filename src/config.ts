@@ -2,9 +2,7 @@
 export const CHECKOUT_URL = "https://lastlink.com/p/C5F28D280/checkout-payment/";
 
 export const PRICE = "R$ 19,90";
-export const FULL_PRICE = "R$ 47,00";
-export const DISCOUNT_PERCENT = "57%";
-export const TIMER_MINUTES = 15;
+export const DISCOUNT_PERCENT = "85%";
 export const SUPPORT_EMAIL = "suporteinnovise@gmail.com";
 
 /** Empilhamento de valor exibido no card de oferta. */

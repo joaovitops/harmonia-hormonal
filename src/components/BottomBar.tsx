@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useTimer } from "../context/timer";
 import { scrollToOffer } from "../lib/track";
 import { PRICE } from "../config";
 
@@ -8,7 +7,6 @@ import { PRICE } from "../config";
  * para não competir com o CTA principal na primeira dobra.
  */
 export function BottomBar() {
-  const { display, urgent } = useTimer();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -30,11 +28,7 @@ export function BottomBar() {
         onClick={() => scrollToOffer("bottom_bar")}
         className="flex w-full items-center justify-center gap-2 rounded-full bg-terra py-3.5 text-base font-bold text-white shadow-lg shadow-terra/30 transition-all duration-200 hover:bg-terra-dark active:scale-[0.98]"
       >
-        Garantir {PRICE}
-        <span aria-hidden>•</span>
-        <span className={`font-mono tabular-nums ${urgent ? "animate-pulse" : ""}`}>
-          {display}
-        </span>
+        Quero meu protocolo por {PRICE}
       </button>
     </div>
   );

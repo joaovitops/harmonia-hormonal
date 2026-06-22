@@ -26,13 +26,9 @@ export function Footer() {
         </a>
       </nav>
 
-      <p className="mx-auto mt-8 max-w-2xl text-xs leading-relaxed text-cream/50">
-        Este conteúdo tem caráter informativo e educacional e não substitui
-        diagnóstico, acompanhamento ou tratamento médico. Consulte sempre um
-        profissional de saúde antes de iniciar qualquer mudança de rotina,
-        alimentação ou tratamento. Resultados podem variar de pessoa para
-        pessoa. © {new Date().getFullYear()} Harmonia Hormonal. Todos os
-        direitos reservados.
+      <p className="mt-8 text-xs text-cream/50">
+        © {new Date().getFullYear()} Harmonia Hormonal. Todos os direitos
+        reservados.
       </p>
     </footer>
   );

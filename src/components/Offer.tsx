@@ -5,22 +5,12 @@ import {
   Lock,
   ShieldCheck,
   Sparkles,
-  TimerIcon,
 } from "lucide-react";
 import { Reveal } from "./ui";
-import { useTimer } from "../context/timer";
 import { checkoutUrlWithUtms, track } from "../lib/track";
-import {
-  CHECKOUT_URL,
-  FULL_PRICE,
-  PRICE,
-  VALUE_STACK,
-  VALUE_TOTAL,
-} from "../config";
+import { CHECKOUT_URL, PRICE, VALUE_STACK, VALUE_TOTAL } from "../config";
 
 export function Offer() {
-  const { display, urgent } = useTimer();
-
   return (
     <section id="oferta" className="relative scroll-mt-16 overflow-hidden px-4 py-20 sm:px-6">
       <div
@@ -81,13 +71,12 @@ export function Offer() {
                 <p className="mt-2 text-sm font-medium text-clay">
                   Hoje, pelo seu diagnóstico:
                 </p>
-                <p className="mt-1 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
-                  <span className="whitespace-nowrap text-lg text-clay line-through">
-                    {FULL_PRICE}
-                  </span>
-                  <span className="whitespace-nowrap font-serif text-5xl font-bold text-terra sm:text-6xl">
-                    <span className="text-2xl sm:text-3xl">R$</span> 19,90
-                  </span>
+                <p className="mx-auto mt-1 max-w-xs text-xs italic leading-relaxed text-clay/70">
+                  Preço exclusivo para quem completou o diagnóstico. Não
+                  disponível na página principal.
+                </p>
+                <p className="mt-2 font-serif text-5xl font-bold text-terra sm:text-6xl">
+                  <span className="text-2xl sm:text-3xl">R$</span> 19,90
                 </p>
                 <p className="mt-2 text-xs font-medium text-clay">
                   pagamento único • acesso imediato • sem mensalidades
@@ -131,20 +120,6 @@ export function Offer() {
               </div>
             </div>
           </div>
-        </Reveal>
-
-        <Reveal delay={200}>
-          <p className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-clay">
-            <TimerIcon className="size-4 text-terra" aria-hidden />
-            Este desconto expira em{" "}
-            <span
-              className={`font-mono text-base font-bold tabular-nums text-terra ${
-                urgent ? "animate-pulse" : ""
-              }`}
-            >
-              {display}
-            </span>
-          </p>
         </Reveal>
       </div>
     </section>

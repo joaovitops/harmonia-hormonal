@@ -1,12 +1,9 @@
-import { ArrowRight, ShieldCheck, TimerIcon, Zap } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap } from "lucide-react";
 import { Reveal } from "./ui";
-import { useTimer } from "../context/timer";
 import { scrollToOffer } from "../lib/track";
 import { PRICE } from "../config";
 
 export function FinalCta() {
-  const { display, urgent } = useTimer();
-
   return (
     <section className="bg-blush px-4 py-20 sm:px-6">
       <Reveal className="mx-auto max-w-2xl text-center">
@@ -34,18 +31,7 @@ export function FinalCta() {
           />
         </button>
 
-        <p className="mt-4 flex items-center justify-center gap-2 text-sm font-medium text-clay">
-          <TimerIcon className="size-4 text-terra" aria-hidden />
-          <span
-            className={`font-mono text-base font-bold tabular-nums text-terra ${
-              urgent ? "animate-pulse" : ""
-            }`}
-          >
-            {display}
-          </span>
-        </p>
-
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs font-medium text-clay">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs font-medium text-clay">
           <span className="inline-flex items-center gap-1.5">
             <ShieldCheck className="size-3.5 text-terra" aria-hidden />
             Garantia incondicional de 7 dias

@@ -92,6 +92,33 @@ export function Avatar({
   );
 }
 
+/** Foto redonda com fallback para as iniciais ([[Avatar]]) se a imagem falhar. */
+export function PhotoAvatar({
+  name,
+  photo,
+  tone = 0,
+  className = "size-11 text-sm",
+}: {
+  name: string;
+  photo: string;
+  tone?: number;
+  className?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return <Avatar name={name} tone={tone} className={className} />;
+  }
+  return (
+    <img
+      src={photo}
+      alt={`Foto de ${name}`}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      className={`shrink-0 rounded-full object-cover ring-2 ring-white ${className}`}
+    />
+  );
+}
+
 /** Pré-título em caps com letter-spacing largo. */
 export function Overline({ children }: { children: ReactNode }) {
   return (

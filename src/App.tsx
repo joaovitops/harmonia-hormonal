@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import { TimerProvider } from "./context/timer";
 import { captureUtms, track } from "./lib/track";
-import { TopBar } from "./components/TopBar";
 import { BottomBar } from "./components/BottomBar";
 import { Hero } from "./components/Hero";
 import { DiscountCard } from "./components/DiscountCard";
@@ -15,7 +13,6 @@ import { Guarantee } from "./components/Guarantee";
 import { Faq } from "./components/Faq";
 import { FinalCta } from "./components/FinalCta";
 import { Footer } from "./components/Footer";
-import { SocialProofToast } from "./components/SocialProofToast";
 
 /** Dispara ViewContent, captura UTMs e mede profundidade de scroll (25/50/75/100). */
 function useTracking() {
@@ -47,8 +44,7 @@ export default function App() {
   useTracking();
 
   return (
-    <TimerProvider>
-      <TopBar />
+    <>
       <main>
         <Hero />
         <DiscountCard />
@@ -64,7 +60,6 @@ export default function App() {
       </main>
       <Footer />
       <BottomBar />
-      <SocialProofToast />
-    </TimerProvider>
+    </>
   );
 }
