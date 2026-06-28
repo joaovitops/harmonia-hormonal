@@ -29,10 +29,21 @@ const aulas: Aula[] = [
     titulo: "Alimentação — Alimentos hormonais",
     youtubeId: "X-3XpK5HvZE",
   },
-  // Links extras fornecidos (ainda sem título) — preencha o título e descomente:
-  // { numero: "04", titulo: "", youtubeId: "ELj7huRiO-Q" },
-  // { numero: "05", titulo: "", youtubeId: "1ojAMFLW6jg" },
-  // { numero: "06", titulo: "", youtubeId: "q8kdOTeHaDY" },
+  {
+    numero: "04",
+    titulo: "Ciclo das sementes — Equilíbrio hormonal natural",
+    youtubeId: "ELj7huRiO-Q",
+  },
+  {
+    numero: "05",
+    titulo: "Alimentação na menopausa — Aliviando os sintomas",
+    youtubeId: "1ojAMFLW6jg",
+  },
+  {
+    numero: "06",
+    titulo: "Ciclo das sementes — O que diz a ciência",
+    youtubeId: "q8kdOTeHaDY",
+  },
 ];
 
 export function Aulas() {
